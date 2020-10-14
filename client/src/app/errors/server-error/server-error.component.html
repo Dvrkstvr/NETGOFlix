@@ -1,0 +1,15 @@
+<h4 style="color: honeydew;">Internal Server Error - refreshing the page might make the error disappear!</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold" style="color: honeydew;">Note: If you are seeing this then Angular probably is not to blame</p>
+    <p style="color: honeydew;">What to do next?</p>
+    <ol style="color: honeydew;">
+        <li>Open the console (press F12)</li>
+        <li>Inspect the Network tab</li>
+        <li>Check the red failing request</li>
+        <li>Examing the request URL - make sure it is correct</li>
+        <li>Reproduce the rorr in Postman - if it is the same response, Angular isnt the issue</li>
+    </ol>
+    <p style="color: honeydew;">Following is the stack trace - this is where your investigation should start</p>
+    <code class="mt-5" style="background-color: black;">{{error.details}}</code>
+</ng-container>
