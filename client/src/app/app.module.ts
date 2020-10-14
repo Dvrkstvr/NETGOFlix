@@ -10,13 +10,29 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
+import { ListsComponent } from './lists/lists.component';
+import { MovieSearchComponent } from './movies/movie-search/movie-search.component';
+import { MovieCategoriesComponent } from './movies/movie-categories/movie-categories.component';
+import { MovieFavoritesComponent } from './movies/movie-favorites/movie-favorites.component';
+import { MovieManagerComponent } from './movies/movie-manager/movie-manager.component';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MovieListComponent,
+    MovieDetailComponent,
+    ListsComponent,
+    MovieSearchComponent,
+    MovieCategoriesComponent,
+    MovieFavoritesComponent,
+    MovieManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +40,8 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
