@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-categories.component.css']
 })
 export class MovieCategoriesComponent implements OnInit {
+  movies: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getMovies();
   }
 
+  getMovies()
+  {
+    this.http.get('https://localhost:5001/api/movies').subscribe(response => {
+      this.movies = response;
+    }, error => {
+      console.log(error);
+    })
+  }
+  
 }

@@ -1,1 +1,7 @@
-<p>movie-categories works!</p>
+<h1 style="color:honeydew">List of Movies</h1>
+
+<div>
+    <ul style="color:honeydew">
+        <li *ngFor="let movie of movies">{{movie.id}} | {{movie.title}} | {{movie.releaseYear}}</li>
+    </ul>
+</div>

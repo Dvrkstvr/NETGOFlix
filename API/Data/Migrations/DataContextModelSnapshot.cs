@@ -14,9 +14,9 @@ namespace API.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8");
+                .HasAnnotation("ProductVersion", "3.1.9");
 
-            modelBuilder.Entity("API.Entities.AppMovies", b =>
+            modelBuilder.Entity("API.Entities.AppMovie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,6 +42,9 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("TEXT");
+
                     b.Property<byte[]>("PasswordHash")
                         .HasColumnType("BLOB");
 
@@ -51,12 +54,49 @@ namespace API.Data.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserRole")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("API.Entities.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("AppMovieId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppMovieId");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Photos");
+                });
+
+            modelBuilder.Entity("API.Entities.Image", b =>
+                {
+                    b.HasOne("API.Entities.AppMovie", null)
+                        .WithMany("Image")
+                        .HasForeignKey("AppMovieId");
+
+                    b.HasOne("API.Entities.AppUser", "AppUser")
+                        .WithMany("Image")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

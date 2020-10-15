@@ -1,0 +1,52 @@
+[
+  {
+    "Title": "John Wick",
+    "releaseYear": 2014,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Momento",
+    "releaseYear": 2001,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Shazam!",
+    "releaseYear": 2019,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Matrix",
+    "releaseYear": 1999,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Book of Eli",
+    "releaseYear": 2010,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Upgrade",
+    "releaseYear": 2018,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "American Psycho",
+    "releaseYear": 2000,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "The Dark Knight",
+    "releaseYear": 2008,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Pulp Fiction",
+    "releaseYear": 1994,
+    "MovieCategory": 1
+  },
+  {
+    "Title": "Die Hard",
+    "releaseYear": 1988,
+    "MovieCategory": 1
+  }
+]

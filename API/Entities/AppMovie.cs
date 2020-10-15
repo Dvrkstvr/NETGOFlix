@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace API.Entities
 {
     public enum Category
@@ -13,5 +15,7 @@ namespace API.Entities
         public int ReleaseYear { get; set; }
         public string Title { get; set; }
         public Category MovieCategory { get; set; }
+
+        public ICollection<MovieImage> Image { get; set; }
     }
 }
