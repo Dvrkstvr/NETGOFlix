@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/_models/movie';
+import { MoviesService } from 'src/app/_services/movies.service';
 
 @Component({
   selector: 'app-movie-categories',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-categories.component.css']
 })
 export class MovieCategoriesComponent implements OnInit {
-  movies: any;
+  movies: Movie[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private movieService: MoviesService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -17,10 +19,8 @@ export class MovieCategoriesComponent implements OnInit {
 
   getMovies()
   {
-    this.http.get('https://localhost:5001/api/movies').subscribe(response => {
-      this.movies = response;
-    }, error => {
-      console.log(error);
+    this.movieService.getMovies().subscribe(movies =>{
+      this.movies = movies;
     })
   }
   

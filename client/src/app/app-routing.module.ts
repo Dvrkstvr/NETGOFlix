@@ -22,7 +22,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'movies', component: MovieListComponent},
-      {path: 'movies/:id', component: MovieDetailComponent},
+      {path: 'movies/:title', component: MovieDetailComponent},
       {path: 'search', component: MovieSearchComponent},
       {path: 'categories', component: MovieCategoriesComponent},
       {path: 'favorites', component: MovieFavoritesComponent},
