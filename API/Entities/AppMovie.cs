@@ -14,7 +14,7 @@ namespace API.Entities
         public int Id { get; set; }
         public string Title { get; set; }
         public int ReleaseYear { get; set; }
-        public Category MovieCategory { get; set; }
+        public int MovieCategory { get; set; }
 
         public ICollection<MovieImage> Image { get; set; }
     }

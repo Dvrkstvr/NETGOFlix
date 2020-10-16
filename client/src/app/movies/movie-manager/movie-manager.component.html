@@ -1,1 +1,17 @@
-<p>movie-manager works!</p>
+<div>
+    <h1 style="color:honeydew">Add Movie</h1>
+    <form #addForm="ngForm" class="form-inLine mt-2 mt-md-0" (ngSubmit)="addMovie(model)">
+        <input name="title" [(ngModel)]="model.title" class="form-control mr-sm-2" type="text" placeholder="Title">
+        <input name="releaseYear" [(ngModel)]="model.releaseYear" class="form-control mr-sm-2" type="number" placeholder="Release Year">
+        <input name="category" [(ngModel)]="model.movieCategory" class="form-control mr-sm-2" type="number" placeholder="Category">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add Movie</button>
+    </form>
+</div>
+
+<div>
+    <h1 style="color:honeydew">Remove Movie</h1>
+    <form #addForm="ngForm" class="form-inLine mt-2 mt-md-0" (ngSubmit)="removeMovie()">
+        <input name="title" [(ngModel)]="model.title" class="form-control mr-sm-2" type="text" placeholder="Title">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Remove Movie</button>
+    </form>
+</div>

@@ -10,6 +10,7 @@ import { Movie } from '../_models/movie';
 })
 export class MoviesService {
   baseUrl = environment.apiUrl;
+  model: any;
 
   constructor(private http: HttpClient) { }
 
@@ -21,5 +22,15 @@ export class MoviesService {
   getMovie(title)
   {
     return this.http.get<Movie>(this.baseUrl + 'movies/' + title);
+  }
+
+  addMovie(model: any)
+  {
+    return this.http.post(this.baseUrl + 'movies/movie-manager', model);
+  }
+
+  removeMovie(model: any)
+  {
+    return this.http.delete(this.baseUrl + 'movies/movie-manager', model);
   }
 }
